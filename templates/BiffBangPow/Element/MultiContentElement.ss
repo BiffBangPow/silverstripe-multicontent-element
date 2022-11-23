@@ -8,13 +8,13 @@
     <% end_if %>
     <div class="row">
         <% loop $ContentBlocks %>
-            <div class="contentblock col-12 $BlockWidth<% if not $ImageFirst %> imagelast<% end_if %> <% if not $Last %>mb-3 mb-lg-4<% end_if %>">
+            <div class="contentblock col-12 $BlockWidth d-flex <% if $ImageFirst %> flex-column<% else %> flex-column-reverse justify-content-end<% end_if %>">
                 <% if $Image %>
                     <% with $Image.ScaleMaxWidth(1000) %>
                         <picture>
                             <source type="image/webp" srcset="$Format('webp').URL">
                             <img alt="$Title"
-                                 class="w-100 lazyload img-fluid <% if $ImageFirst %>pb-4<% else %>pt-4<% end_if %>"
+                                 class="w-100 lazyload img-fluid <% if $Up.Up.ImageFirst %>mb-3<% else %>mt-2<% end_if %>"
                                  data-src="$URL"
                                  src="" loading="lazy" width="$Width" height="$Height">
                         </picture>

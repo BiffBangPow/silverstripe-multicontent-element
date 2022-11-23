@@ -27,8 +27,8 @@ class MultiContentItem extends DataObject
     private static $owns = [
         'Image'
     ];
-    private static $singular_name = 'Content block';
-    private static $plural_name = 'Content blocks';
+    private static $singular_name = 'Content Item';
+    private static $plural_name = 'Content Items';
     private static $extensions = [
         SortableExtension::class
     ];
