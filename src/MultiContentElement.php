@@ -11,12 +11,14 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 class MultiContentElement extends BaseElement
 {
-    private static $table_name = 'ContentImagesElement';
+    private static $table_name = 'MultiContentElement';
     private static $has_many = [
         'ContentBlocks' => MultiContentItem::class
     ];
     private static $inline_editable = false;
-
+    private static $cascade_deletes = [
+        'ContentBlocks'
+    ];
 
     public function getCMSFields()
     {
