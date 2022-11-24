@@ -3,6 +3,7 @@
 namespace BiffBangPow\Element\Model;
 
 use BiffBangPow\Element\MultiContentElement;
+use BiffBangPow\Extension\CallToActionExtension;
 use BiffBangPow\Extension\SortableExtension;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\DropdownField;
@@ -30,7 +31,8 @@ class MultiContentItem extends DataObject
     private static $singular_name = 'Content Item';
     private static $plural_name = 'Content Items';
     private static $extensions = [
-        SortableExtension::class
+        SortableExtension::class,
+        CallToActionExtension::class
     ];
     private static $blockwidths = [
         'col-md-12' => 'Full width',

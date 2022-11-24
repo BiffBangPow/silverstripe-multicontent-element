@@ -23,6 +23,18 @@
                 <div class="content">
                     <h3 class="mb-3">$Title</h3>
                     $Content
+                    <% if $CTAType != 'None' %>
+                        <div class="column-cta">
+                            <p>
+                                <a href="$CTALink" class="cta-link btn btn-secondary"
+                                    <% if $CTAType == 'External' %>target="_blank" rel="noopener"
+                                    <% else_if $CTAType == 'Download' %>download
+                                    <% end_if %>>
+                                    $LinkText
+                                </a>
+                            </p>
+                        </div>
+                    <% end_if %>
                 </div>
             </div>
         <% end_loop %>
