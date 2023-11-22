@@ -2,6 +2,7 @@
 
 namespace BiffBangPow\Element;
 
+use BiffBangPow\Element\Control\MultiContentElementController;
 use BiffBangPow\Element\Model\MultiContentItem;
 use BiffBangPow\Extension\ElementInlineUnEditable;
 use DNADesign\Elemental\Models\BaseElement;
@@ -19,6 +20,7 @@ class MultiContentElement extends BaseElement
     private static $cascade_deletes = [
         'ContentBlocks'
     ];
+    private static $controller_class = MultiContentElementController::class;
 
     public function getCMSFields()
     {

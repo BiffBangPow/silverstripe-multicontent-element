@@ -2,7 +2,7 @@
     <% if $Title && $ShowTitle %>
         <div class="row">
             <div class="col-12">
-                <h2 class="mb-3">$Title</h2>
+                <h2 class="mb-4 element-title">$Title</h2>
             </div>
         </div>
     <% end_if %>
@@ -14,19 +14,18 @@
                         <picture>
                             <source type="image/webp" srcset="$Format('webp').URL">
                             <img alt="$Title"
-                                 class="w-100 lazyload img-fluid <% if $Up.Up.ImageFirst %>mb-3<% else %>mt-2<% end_if %>"
-                                 data-src="$URL"
-                                 src="" loading="lazy" width="$Width" height="$Height">
+                                 class="w-100 img-fluid <% if $Up.Up.ImageFirst %>mb-3<% else %>mt-2<% end_if %>"
+                                 src="$URL" loading="lazy" width="$Width" height="$Height">
                         </picture>
                     <% end_with %>
                 <% end_if %>
                 <div class="content">
-                    <h3 class="mb-3">$Title</h3>
+                    <h3 class="mb-3 content-title">$Title</h3>
                     $Content
                     <% if $CTAType != 'None' %>
-                        <div class="column-cta">
+                        <div class="column-cta my-4">
                             <p>
-                                <a href="$CTALink" class="cta-link btn btn-secondary"
+                                <a href="$CTALink" class="cta-link btn btn-outline-primary"
                                     <% if $CTAType == 'External' %>target="_blank" rel="noopener"
                                     <% else_if $CTAType == 'Download' %>download
                                     <% end_if %>>
